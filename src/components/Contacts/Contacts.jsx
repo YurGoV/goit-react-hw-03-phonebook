@@ -25,7 +25,7 @@ export const Contacts = ({data}) => {
         <Title>Contacts</Title>
         <ContactsList>
           {data.map(contact => (
-            <ContactRow key={contact.id}>{contact.name}</ContactRow>
+            <ContactRow key={contact.id}>{contact.name}: {contact.number}</ContactRow>
             ))}
         </ContactsList>
       </Contact>
