@@ -6,7 +6,7 @@ export const ContactsEl = ({data, filter}) => {
 
   function filteredData () {
       if (filter.length > 0) {
-        return data.filter(dat => dat.name.toLowerCase().includes(filter));
+        return data.filter(dat => dat.name.toLowerCase().includes(filter.toLowerCase().trim()));//todo: refactoring
       }
       return data;
     }

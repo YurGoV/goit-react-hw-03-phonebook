@@ -21,12 +21,22 @@ export class App extends Component {
   handleAddContact = (e) => {
     e.preventDefault();
 
-    const name = e.currentTarget.elements.name.value;
-    const number = e.currentTarget.elements.number.value;
-    const id = nanoid();
+    const stateContacts = this.state.contacts;
+    const formContact = e.currentTarget;
+    console.log(stateContacts);
 
+    const name = formContact.name.value;
+    const number = formContact.number.value;
+    const id = nanoid();
+    // console.log(this.state.contacts);
+
+    const isAlreadyInContacts = stateContacts.find(contact => contact.name === name);
+    console.log(isAlreadyInContacts);
+    if (isAlreadyInContacts) {
+      return alert(`${name} is already in contacts`)
+    }
     this.setState({
-      contacts: [...this.state.contacts, {
+      contacts: [...stateContacts, {
         id,
         name,
         number,
