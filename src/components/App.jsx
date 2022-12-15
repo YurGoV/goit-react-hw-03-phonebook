@@ -23,7 +23,7 @@ export class App extends Component {
 
     const stateContacts = this.state.contacts;
     const formContact = e.currentTarget;
-    console.log(stateContacts);
+    // console.log(stateContacts);
 
     const name = formContact.name.value;
     const number = formContact.number.value;
@@ -31,7 +31,7 @@ export class App extends Component {
     // console.log(this.state.contacts);
 
     const isAlreadyInContacts = stateContacts.find(contact => contact.name === name);
-    console.log(isAlreadyInContacts);
+    // console.log(isAlreadyInContacts);
     if (isAlreadyInContacts) {
       return alert(`${name} is already in contacts`)
     }
@@ -51,6 +51,13 @@ export class App extends Component {
     })
   }
 
+  deleteContact = (id) => {
+    // console.log(id);
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contact => contact.id !== id),
+    }));
+  }
+
   render() {
     const contacts = this.state.contacts;
     const filter = this.state.filter;
@@ -60,7 +67,7 @@ export class App extends Component {
         <Title>Phonebook</Title>
         <ContactForm onSubmit={this.handleAddContact}></ContactForm>
         <Filter onSearch={this.handleSearchContacts}></Filter>
-        <ContactsList data={contacts} filter={filter}></ContactsList>
+        <ContactsList data={contacts} filter={filter} onDelete={this.deleteContact}></ContactsList>
       </Section>
     );
   }

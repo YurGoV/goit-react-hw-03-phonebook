@@ -7,8 +7,8 @@ export const Contact = styled.div`
   //padding: 60px;
   font-size: 30px;
   color: #010101;
-  padding: 15px 0;
-  max-width: 250px;
+  padding: 5px 0;
+  max-width: 300px;
   //margin-left: auto;
   margin-right: auto;
 `;
@@ -16,7 +16,8 @@ export const Contact = styled.div`
 export const Title = styled.h2`
   font-size: 18px;
   font-weight: lighter;
-  text-decoration: underline;
+  //text-decoration: underline;
+  margin: 5px 0;
 `;
 
 

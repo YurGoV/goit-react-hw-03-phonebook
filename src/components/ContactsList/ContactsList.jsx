@@ -3,12 +3,29 @@ import {Contact, Title} from "./ContactsList.styled";
 import {ContactsEl} from "../ContactEl/ContactsEl";
 
 
-export const ContactsList = ({data, filter}) => {
+export const ContactsList = ({data, filter, onDelete}) => {
 
-  return (
+  function filteredData() {
+    if (filter.length > 0) {
+      return data.filter(dat => dat.name.toLowerCase().includes(filter.toLowerCase().trim()));//todo: refactoring
+    }
+    return data;
+  }
+
+  if (filteredData().length > 0) {
+    return (
       <Contact>
         <Title>Contacts</Title>
-        <ContactsEl data={data} filter={filter}></ContactsEl>
+        <ContactsEl data={filteredData()} onDelete={onDelete}></ContactsEl>
       </Contact>
     );
+  }
+  return (
+    <Contact>
+      <Title>There are no contacts, matching you query (</Title>
+    </Contact>
+  );
+
+
 };
+

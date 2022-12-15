@@ -8,12 +8,12 @@ export const Section = styled.section`
   font-size: 30px;
   color: #010101;
   padding: 60px 0;
-  max-width: 250px;
+  max-width: 300px;
   margin-left: auto;
   margin-right: auto;
 `;
 
 export const Title = styled.h1`
-font-size: 20px;
+font-size: 24px;
 `;
 

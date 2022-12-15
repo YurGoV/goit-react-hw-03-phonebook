@@ -1,7 +1,9 @@
 import styled from '@emotion/styled';
 
 export const Field = styled.label`
-font-size: 18px;
+  display: flex;
+  flex-direction: column;
+font-size: 14px;
   //margin-bottom: 0;
   //margin-top: 20px;
   min-width: 50px;
