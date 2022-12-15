@@ -1,8 +1,8 @@
 import React from "react";
-import {Contact, ContactRow, ContactsList, Title} from "./contacts.styled";
+import {ContactRow, ContactsList} from "./ContactsEl.styled";
 
 
-export const Contacts = ({data, filter}) => {
+export const ContactsEl = ({data, filter}) => {
 
   function filteredData () {
       if (filter.length > 0) {
@@ -12,14 +12,12 @@ export const Contacts = ({data, filter}) => {
     }
 
   return (
-      <Contact>
-        <Title>Contacts</Title>
-        <ContactsList>
+      <ContactsList>
           {filteredData().map(contact => (
             <ContactRow key={contact.id}>{contact.name}: {contact.number}</ContactRow>
             )
           )}
         </ContactsList>
-      </Contact>
+
     );
 };

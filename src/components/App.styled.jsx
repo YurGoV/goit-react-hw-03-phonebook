@@ -15,12 +15,5 @@ export const Section = styled.section`
 
 export const Title = styled.h1`
 font-size: 20px;
-
 `;
 
-export const Field = styled.label`
-font-size: 18px;
-  //margin-bottom: 0;
-  //margin-top: 20px;
-  min-width: 50px;
-`;

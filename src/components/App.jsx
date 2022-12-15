@@ -1,8 +1,9 @@
 import React, {Component} from "react";
-import {Field, Section, Title} from "./App.styled";
-import {Contacts} from "./Contacts/Contacts";
+import {Section, Title} from "./App.styled";
 import {nanoid} from "nanoid";
 import {Filter} from "./Filter/Filter";
+import {ContactsList} from "./ContactsList/ContactsList";
+import {ContactForm} from "./ContactForm/ContactForm";
 
 
 export class App extends Component {
@@ -43,34 +44,13 @@ export class App extends Component {
   render() {
     const contacts = this.state.contacts;
     const filter = this.state.filter;
-    // console.log(contacts);
+
     return (
       <Section>
-        <form onSubmit={this.handleAddContact}>
-          <Title>Phonebook</Title>
-          <Field>Name
-            <input
-              type="text"
-              name="name"
-              pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-              title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-              required
-            /></Field>
-          <Field>Number
-            <input
-              type="tel"
-              name="number"
-              pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-              title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-              required
-            /></Field>
-          <button type="text">Add contact</button>
-        </form>
-
+        <Title>Phonebook</Title>
+        <ContactForm onSubmit={this.handleAddContact}></ContactForm>
         <Filter onSearch={this.handleSearchContacts}></Filter>
-
-        <Contacts data={contacts} filter={filter}></Contacts>
-
+        <ContactsList data={contacts} filter={filter}></ContactsList>
       </Section>
     );
   }
