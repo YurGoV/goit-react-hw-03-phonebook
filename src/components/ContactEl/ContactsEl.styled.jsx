@@ -18,14 +18,17 @@ export const ContactRow = styled.li`
 `;
 
 export const ButtonOnDelete = styled.button`
-  background-color: #f3f3f3;
+  background-color: white;
   display: flex;
   max-height: 17px;
   align-content: center;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  border: 1px solid lightgray;
+  border: none;
   border-radius: 3px;
   font-size: 12px;
+  &:hover {
+    background-color: lightcoral;
+  }
 `;

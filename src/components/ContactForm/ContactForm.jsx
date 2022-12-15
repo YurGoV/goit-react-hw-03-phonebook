@@ -1,5 +1,5 @@
 import React from "react";
-import {Field} from "./ContactForm.styled";
+import {Button, Field} from "./ContactForm.styled";
 
 
 export const ContactForm = ({onSubmit}) => {
@@ -22,7 +22,7 @@ export const ContactForm = ({onSubmit}) => {
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
         /></Field>
-      <button type="text">Add contact</button>
+      <Button type="text">Add contact</Button>
     </form>
   )
 }

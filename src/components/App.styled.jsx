@@ -4,7 +4,7 @@ export const Section = styled.section`
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  padding: 60px;
+  padding-top: 0;
   font-size: 30px;
   color: #010101;
   max-width: 300px;
