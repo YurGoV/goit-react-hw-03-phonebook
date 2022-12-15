@@ -4,6 +4,7 @@ import {nanoid} from "nanoid";
 import {Filter} from "./Filter/Filter";
 import {ContactsList} from "./ContactsList/ContactsList";
 import {ContactForm} from "./ContactForm/ContactForm";
+import PropTypes from 'prop-types';
 
 
 export class App extends Component {
@@ -23,15 +24,10 @@ export class App extends Component {
 
     const stateContacts = this.state.contacts;
     const formContact = e.currentTarget;
-    // console.log(stateContacts);
-
     const name = formContact.name.value;
     const number = formContact.number.value;
     const id = nanoid();
-    // console.log(this.state.contacts);
-
     const isAlreadyInContacts = stateContacts.find(contact => contact.name === name);
-    // console.log(isAlreadyInContacts);
     if (isAlreadyInContacts) {
       return alert(`${name} is already in contacts`)
     }
@@ -45,14 +41,12 @@ export class App extends Component {
   };
 
   handleSearchContacts = (e) => {
-    // console.log(e.currentTarget.value)
     this.setState({
       filter: e.currentTarget.value,
     })
   }
 
   deleteContact = (id) => {
-    // console.log(id);
     this.setState(prevState => ({
       contacts: prevState.contacts.filter(contact => contact.id !== id),
     }));
@@ -71,4 +65,14 @@ export class App extends Component {
       </Section>
     );
   }
-};
+}
+
+App.propTypes = {
+  filter: PropTypes.string,
+  contacts: PropTypes.arrayOf({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    }
+  )
+}
