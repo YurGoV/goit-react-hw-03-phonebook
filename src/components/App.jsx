@@ -41,13 +41,13 @@ export class App extends Component {
   };
 
 
-  handleAddContact = (e) => {
-    e.preventDefault();
+  handleAddContact = ({name, number}) => {
+    // e.preventDefault();
+
+    console.log('name: '+ name+ ' number: ' + number);
 
     const stateContacts = this.state.contacts;
-    const formContact = e.currentTarget;
-    const name = formContact.name.value;
-    const number = formContact.number.value;
+
     const id = nanoid();
     const isAlreadyInContacts = stateContacts.find(contact => contact.name === name);
     if (isAlreadyInContacts) {
