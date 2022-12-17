@@ -25,3 +25,7 @@ export const Button = styled.button`
     background-color: lightgreen;
   }
 `;
+
+export const Input = styled(Field)`
+  color: #2a2a2a;
+`;
