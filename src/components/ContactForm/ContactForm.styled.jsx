@@ -22,7 +22,8 @@ export const Button = styled.button`
   font-size: 16px;
   margin-top: 10px;
   &:hover {
-    background-color: lightgreen;
+    //background-color: lightgreen;
+    border: 1px solid lightgreen;
   }
 `;
 

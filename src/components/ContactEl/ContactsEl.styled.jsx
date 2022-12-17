@@ -29,6 +29,7 @@ export const ButtonOnDelete = styled.button`
   border-radius: 3px;
   font-size: 12px;
   &:hover {
-    background-color: lightcoral;
+    //background-color: lightcoral;
+    border: 1px solid lightcoral;
   }
 `;
