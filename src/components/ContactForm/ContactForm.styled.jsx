@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const Field = styled.label`
+export const InputField = styled.label`
   display: flex;
   flex-direction: column;
   font-size: 14px;
@@ -26,6 +26,3 @@ export const Button = styled.button`
   }
 `;
 
-export const Input = styled(Field)`
-  color: #2a2a2a;
-`;
