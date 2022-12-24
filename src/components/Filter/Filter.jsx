@@ -1,5 +1,7 @@
 import React from "react";
 import {Field, FilterStyled} from "./Filter.styled";
+import PropTypes from "prop-types";
+
 
 export const Filter = ({onSearch}) => {
 
@@ -16,4 +18,8 @@ export const Filter = ({onSearch}) => {
       </Field>
     </FilterStyled>
   )
+}
+
+Filter.propTypes = {
+  onSearch: PropTypes.func.isRequired,
 }

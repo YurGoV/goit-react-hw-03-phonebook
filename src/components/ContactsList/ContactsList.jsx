@@ -33,5 +33,6 @@ export const ContactsList = ({data, filter, onDelete}) => {
 ContactsList.propTypes = {
   data: PropTypes.array,
   filter: PropTypes.string,
+  onDelete: PropTypes.func.isRequired,
 }
 

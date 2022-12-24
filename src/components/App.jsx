@@ -22,10 +22,9 @@ export class App extends Component {
   componentDidMount() {
     const localContacts = JSON.parse(localStorage.getItem('contacts'));
     if (localContacts) {
-      console.log(localContacts);
       this.setState({
         contacts: localContacts,
-    })
+      })
 
     }
 
@@ -42,14 +41,11 @@ export class App extends Component {
 
 
   handleAddContact = ({name, number}) => {
-    // e.preventDefault();
-
-    console.log('name: '+ name+ ' number: ' + number);
 
     const stateContacts = this.state.contacts;
-
     const id = nanoid();
     const isAlreadyInContacts = stateContacts.find(contact => contact.name === name);
+
     if (isAlreadyInContacts) {
       return alert(`${name} is already in contacts`)
     }

@@ -13,7 +13,6 @@ export const Button = styled.button`
   display: flex;
   height: 30px;
   width: 100px;
-  //align-content: center;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -21,8 +20,8 @@ export const Button = styled.button`
   border-radius: 3px;
   font-size: 16px;
   margin-top: 10px;
+
   &:hover {
-    //background-color: lightgreen;
     border: 1px solid lightgreen;
   }
 `;

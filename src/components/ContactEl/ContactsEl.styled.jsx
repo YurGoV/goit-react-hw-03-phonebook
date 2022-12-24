@@ -20,7 +20,8 @@ export const ContactRow = styled.li`
 export const ButtonOnDelete = styled.button`
   background-color: white;
   display: flex;
-  max-height: 17px;
+  height: 20px;
+  width: 40px;
   align-content: center;
   align-items: center;
   justify-content: center;
@@ -28,8 +29,8 @@ export const ButtonOnDelete = styled.button`
   border: none;
   border-radius: 3px;
   font-size: 12px;
+
   &:hover {
-    //background-color: lightcoral;
     border: 1px solid lightcoral;
   }
 `;
